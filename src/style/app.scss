@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Arvo:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lusitana&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Padauk&display=swap');
+
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  // box-shadow: 1px 1px 1px 3px red;
+}
+
+
+:root {
+  --headline: #fffffe;
+  --paragraph: #a7a9be;
+  --headline-font: 'Arvo', serif;
+  --para-font: 'Padauk', sans-serif;
+  --highlight-font: 'Lusitana', serif;
+}
+
+html {
+  line-height: 1.15;
+
+}
+
+body {
+  background-color: #000;
+  color: #fff;
+}
+
+// html,
+// body,
+// #app {
+//   height: 100%;
+//   width: 100%;
+// }
+
+body {
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  
+}
+
+p {
+  font-family: 'Padauk', sans-serif;
+  font-size: clamp(14px, 3vw, 3rem);
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Arvo', serif;
+}
+
+
+::-webkit-scrollbar {
+  width: .5rem;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--paragraph);
+  border-radius: 100vw;
+  mix-blend-mode: difference;
+}
