@@ -16,8 +16,14 @@ let heroText = "SALUT"
 </section>
 <section class="hero-video">
   <figure>
-
+    <video src="https://media.wearemotto.com/app/uploads/2022/11/14104333/home-hero-opt.mp4" muted loop preload="metadata" autoplay></video>
   </figure>
+</section>
+<section class="hero-sub-text">
+  <h1>
+      nous 
+   sommes la pour <span> APPORTER DU BONHEUR</span> dans   <span>VOS ASSIETE</span>
+  </h1>
 </section>
 
 
@@ -27,7 +33,7 @@ let heroText = "SALUT"
     padding: 5vw;
     padding-top: clamp(9rem, 0vw, 180px);
     
-    height: 100vh;
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: flex-start;
@@ -54,8 +60,37 @@ let heroText = "SALUT"
   }
 
   .hero-video {
-    height: 100vh;
+    padding-top: 7vw;
+    height: 150vh;
     width: 100dvw;
+
+    figure {
+      height: 40%;
+      width: 40%;
+      position: sticky;
+      top: 0;
+
+
+      video {
+        height: 100%;
+        width: 100%;
+      }
+    }
+  }
+
+  .hero-sub-text{
+    width: 100dvw;
+    height: 100vh;
+    padding: 5vw;
+    overflow: hidden;
+
+    h1 {
+      font-size: 9vw;
+
+      span {
+        font-family: var(--highlight-font);
+      }
+    }
   }
 
 </style>

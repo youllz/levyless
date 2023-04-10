@@ -10,11 +10,16 @@
   </strong>
 
 
-  <button>
-    <span></span>
-    <span></span>
-    <span></span>
-  </button>
+  <div>
+    <span>
+      menu
+    </span>
+    <button>
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
 </header>
 
 <main>
@@ -56,6 +61,17 @@
       }
 
       
+    }
+
+    div {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+
+      span {
+        font-family: var(--para-font);
+      }
     }
   }
 
