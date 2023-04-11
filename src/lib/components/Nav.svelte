@@ -1,35 +1,45 @@
-<nav>
+<script lang="ts">
+
+  import {fly} from 'svelte/transition' 
+
+  export let nav:boolean
+</script>
 
 
- <div class="nav-container">
-  <div class="social">
-    <h4>SOCIAL</h4>
-    <div class="social-links">
-      <a href="/">Facebook</a>
-      <a href="/">Whatsapp</a>
-      <a href="/">Instagram</a>
-    </div>
-  </div>
-  <div class="menu">
-    <h4>MENU</h4>
-    <div class="menu-links">
-      <a href="/">Acceuil</a>
-      <a href="/">Services</a>
-      <a href="/">Gallerie</a>
-      <a href="/">Contacts</a>
-    </div>
-  </div>
- </div>
-
- 
+{#if nav}
+  <nav transition:fly={{x: 200, duration: 500}} >
   
-</nav>
+  
+   <div class="nav-container">
+    <div class="social">
+      <h4>SOCIAL</h4>
+      <div class="social-links">
+        <a href="/">Facebook</a>
+        <a href="/">Whatsapp</a>
+        <a href="/">Instagram</a>
+      </div>
+    </div>
+    <div class="menu">
+      <h4>MENU</h4>
+      <div class="menu-links">
+        <a href="/">Acceuil</a>
+        <a href="/">Services</a>
+        <a href="/">Gallerie</a>
+        <a href="/">Contacts</a>
+      </div>
+    </div>
+   </div>
+  
+   
+    
+  </nav>
+{/if}
 
 
 
 <style lang="scss">
   nav {
-    width: 50vw;
+    min-width: 50vw;
     height: 100vh;
     background-color: #fff;
     color: #000;
@@ -38,6 +48,7 @@
     position: fixed;
     right: 0;
     padding: 8rem 5vw 2rem;
+    z-index: 20;
 
   }
 

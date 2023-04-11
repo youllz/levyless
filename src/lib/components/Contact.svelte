@@ -2,7 +2,23 @@
 	import { onMount } from "svelte";
 
   onMount(async() => {
-    const eyes =[...document.querySelectorAll(".eyes span")] as HTMLSpanElement[]
+    const eyes =[...document.querySelectorAll(".eye")] as HTMLSpanElement[]
+    // const anchor = document.querySelector('.body') as HTMLDivElement
+
+    window.addEventListener('mousemove', (event:MouseEvent) => {
+      const mouseX = event.clientX * 100 /window.innerWidth + '%'
+      const mouseY = event.clientY * 100 / window.innerHeight + '%'
+
+      eyes.forEach(eye => {
+        eye.style.left = mouseX
+        eye.style.top = mouseY
+
+        eye.style.transform = "translate( -" + mouseX + ",-" + mouseY + ")"
+      })
+
+    })
+
+   
   })
 </script>
 
@@ -17,9 +33,13 @@ autour d'un Bon café
 
  
 <div class="body">
-  <div class="eyes">
-    <span class="eye"></span>
-    <span class="eye"></span>
+  <div class="eyes-container">
+    <div class="eyes">
+      <span class="eye"></span>
+    </div>
+    <div class="eyes">
+      <span class="eye"></span>
+    </div>
   </div>
   <span class="mouth"></span>
 </div>
@@ -48,13 +68,19 @@ autour d'un Bon café
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 150px;
-  width: 150px;
+  height: 200px;
+  width: 200px;
   border-radius: 100px;
   border: 1px solid #fff;
   padding: 10x;
   gap: 20px;
 
+}
+
+.eyes-container {
+  display: flex;
+  gap: 30px;
+  align-items: center;
 }
 
 .eyes {
@@ -63,12 +89,19 @@ autour d'un Bon café
   display: flex;
   justify-content: space-around;
   padding: 0 10px;
+  position: relative;
+  height: 50px;
+  width: 30px;
+  border-radius: 50%;
+  border: 1px solid #fff;
+  overflow: hidden;
 
   span {
     height: 20px;
     width: 15px;
     background-color: #fff;
     border-radius: 50%;
+    position: absolute;
     
   }
   

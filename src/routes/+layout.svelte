@@ -1,9 +1,19 @@
 <script lang="ts">
-	import Nav from '$lib/components/Nav.svelte';
+	import Footer from '$lib/components/Footer.svelte';
+import Nav from '$lib/components/Nav.svelte';
   import '../style/app.scss'
+
+  let nav = false
+  
+function navToggle() {
+  nav = !nav
+}
 </script>
 
-<!-- <Nav/> -->
+
+{#if nav}
+  <Nav {nav}/>
+{/if}
 <header>
   <strong>
     LEVYLESS
@@ -12,9 +22,9 @@
 
   <div>
     <span>
-      menu
+      {nav ? 'close' : 'menu'}
     </span>
-    <button>
+    <button on:click={navToggle}>
       <span></span>
       <span></span>
       <span></span>
@@ -25,6 +35,8 @@
 <main>
   <slot/>
 </main>
+
+<Footer/>
 
 
 <style lang="scss">

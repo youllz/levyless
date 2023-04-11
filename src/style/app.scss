@@ -45,6 +45,10 @@ a {
   
 }
 
+li {
+  list-style-type: none;
+}
+
 p {
   font-family: 'Padauk', sans-serif;
   font-size: clamp(14px, 3vw, 3rem);
